@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    background: #0a0a0f;
+    background-image:
+      radial-gradient(ellipse at 20% 20%, rgba(99, 58, 255, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 80%, rgba(236, 72, 153, 0.1) 0%, transparent 50%),
+      radial-gradient(ellipse at 50% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 70%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 5px; height: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: rgba(139, 92, 246, 0.4); border-radius: 99px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(139, 92, 246, 0.7); }
+}
+
+@layer components {
+  .glass {
+    background: rgba(255, 255, 255, 0.04);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .glass-hover:hover {
+    background: rgba(255, 255, 255, 0.07);
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .gradient-text {
+    background: linear-gradient(135deg, #a78bfa, #ec4899, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .btn-primary {
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    box-shadow: 0 0 20px rgba(124, 58, 237, 0.4);
+    transition: all 0.2s;
+  }
+
+  .btn-primary:hover:not(:disabled) {
+    box-shadow: 0 0 30px rgba(124, 58, 237, 0.6);
+    transform: translateY(-1px);
+  }
+
+  .btn-primary:disabled {
+    background: rgba(255,255,255,0.07);
+    box-shadow: none;
+  }
+
+  .chip {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid rgba(139, 92, 246, 0.25);
+    color: #c4b5fd;
+    transition: all 0.2s;
+  }
+
+  .chip:hover {
+    background: rgba(139, 92, 246, 0.25);
+    border-color: rgba(139, 92, 246, 0.5);
+    color: #ede9fe;
+    transform: translateY(-1px);
+  }
+
+  .tab-active {
+    color: #a78bfa;
+    border-bottom: 2px solid #a78bfa;
+  }
+
+  .tab-inactive {
+    color: #6b7280;
+    border-bottom: 2px solid transparent;
+  }
+
+  .tab-inactive:hover {
+    color: #9ca3af;
+  }
+
+  .glow-dot {
+    width: 8px;
+    height: 8px;
+    background: #34d399;
+    border-radius: 50%;
+    box-shadow: 0 0 8px #34d399, 0 0 16px rgba(52, 211, 153, 0.4);
+    animation: pulse-glow 2s infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; box-shadow: 0 0 8px #34d399, 0 0 16px rgba(52, 211, 153, 0.4); }
+    50% { opacity: 0.7; box-shadow: 0 0 4px #34d399, 0 0 8px rgba(52, 211, 153, 0.2); }
+  }
+}
