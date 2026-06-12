@@ -1,4 +1,4 @@
-# NL-SQL Engine 🤖
+# NL-SQL Engine 
 
 > Ask your database anything in plain English. No SQL knowledge required.
 
